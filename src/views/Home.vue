@@ -5,7 +5,7 @@
     </v-row>
     <v-row>
       <v-col
-        v-for="(persona, index) in $store.state.personajes"
+        v-for="persona in $store.state.personajes"
         :key="persona.id"
         cols="12"
         sm="4"
@@ -76,8 +76,8 @@ export default {
             response.data.results
           ]);
         })
-        .catch(err => {
-          console.log(err);
+        .catch((err) => {
+          console.error(err);
         });
       this.loading.personajes = false;
     }
